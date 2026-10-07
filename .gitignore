@@ -1,0 +1,42 @@
+# Python and build artifacts
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+build/
+dist/
+*.egg-info/
+
+# Local credentials (only sanitized examples may be committed)
+.env
+.env.*
+!.env.example
+!.env.*.example
+*.pem
+*.key
+*.p12
+*.pfx
+credentials.json
+secrets.json
+.netrc
+
+# Private experiments, results, logs, and downloaded targets
+/work/
+/experiments/
+/benchmarks/JevProbeBench/
+/reports/
+/results/
+/logs/
+/runs/
+/targets/
+/jevprobe/census/
+/jevprobe/ground_truth/
+*.log
+*.jsonl
+*.sqlite
+*.sqlite3
+*.sqlite-*
+*.sqlite3-*
+*.db
+*.db-*
