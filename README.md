@@ -58,6 +58,20 @@ single-pass protocol, with impact assessment hard-gated on observed flips.
 - **Every attempt is accounted.** Failures, invalid generations and null
   reviews are part of the denominator.
 
+## JevProbeBench
+
+This repository includes **JevProbeBench**: a curated injection-test dataset
+built by measuring 228 real open-source Jev applications (2.8k–109.6k stars).
+
+| Metric | Value |
+|---|---|
+| Projects measured | 228 |
+| Curated records (≤10/project, flips-first) | 2,273 |
+| Flip success rate | **81.5%** |
+| Hard-gated unsafe rate (given flip) | **98.6%** |
+
+See `benchmarks/JevProbeBench/manifest.json` for the full provenance.
+
 ## Layout
 
 | Path | Contents |
@@ -65,6 +79,7 @@ single-pass protocol, with impact assessment hard-gated on observed flips.
 | `jevprobe/automation/` | durable single-pass infrastructure: budget ledger, recorded transport, manifests, bounded generation |
 | `jevprobe/ecosystem/` | typed consumer contracts (`core`), flip comparison, predeclared risk rules (`risk_criteria`), independent review (`review`), generic adapters and the batch runner (`runner`) |
 | `jevprobe/ecosystem/native_bridge.ts` | generic native seam: runs an app's own Jev code unchanged, relaying systemone calls over stdio |
+| `benchmarks/JevProbeBench/` | curated injection-test dataset (228 projects, 2,273 records) |
 | `tools/bridge_template.py` | generates a transport-only bridge for a target application |
 | `examples/` | a complete example wiring (application + case plan + impact rule) |
 | `docs/PROTOCOL.md` | the frozen single-pass protocol and impact-assessment gates |
@@ -91,9 +106,11 @@ called over OpenAI-compatible endpoints (configurable via environment).
 
 ## Release contents
 
-This source release contains the framework and illustrative examples. Experiment
-logs, measured records, model requests/responses, and aggregate results are not
-included. Keep runtime output in the ignored `experiments/` or `work/` directories.
+This release includes the JevProbe framework and the curated JevProbeBench
+experimental dataset, including measured outcome labels and aggregate statistics.
+Private raw run logs, budget databases, credentials, and unpublished reports are
+excluded. See `benchmarks/JevProbeBench/README.md` for the dataset fields and
+release redactions. Keep new runtime output in `experiments/` or `work/`.
 
 ## License
 

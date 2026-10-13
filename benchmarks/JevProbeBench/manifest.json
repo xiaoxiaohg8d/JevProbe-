@@ -1,0 +1,27 @@
+{
+  "name": "JevProbeBench",
+  "version": "v1.0",
+  "created_at": "2026-10-07",
+  "protocol": "jev_ecosystem_single_pass_v1",
+  "selection": "per-project cap 10 records, flips-first stable selection (predeclared)",
+  "stats": {
+    "projects": 228,
+    "records": 2273,
+    "flips": 1853,
+    "flip_rate": 0.8152,
+    "unsafe_gated": 1827,
+    "unsafe_rate_among_flips": 0.986
+  },
+  "unsafe_definition": "risk_unsafe_raw is true AND observed_flip is true (hard-gated at record creation)",
+  "fields_note": "Public curated dataset with test inputs, baseline requests/decisions, comparisons, and outcome labels. Private raw run logs, full attempt ledgers, and unpublished reports are excluded. Batch identifiers are retained as dataset provenance.",
+  "release_redactions": {
+    "records": 1,
+    "bench_ids": [
+      "JevProbeBench-f3e59897e8c7"
+    ],
+    "fields": [
+      "injected_source"
+    ],
+    "note": "An SSH account and internal hostname were replaced with an example address. Historical IDs and outcome labels are preserved; redacted text has not been rerun. See README.md."
+  }
+}

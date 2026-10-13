@@ -24,7 +24,6 @@ secrets.json
 # Private experiments, results, logs, and downloaded targets
 /work/
 /experiments/
-/benchmarks/JevProbeBench/
 /reports/
 /results/
 /logs/
@@ -40,3 +39,6 @@ secrets.json
 *.sqlite3-*
 *.db
 *.db-*
+
+# Curated public dataset (review before adding other runtime JSONL files)
+!/benchmarks/JevProbeBench/records.jsonl
