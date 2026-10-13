@@ -1,5 +1,4 @@
 # JevProbe
-
 Automated prompt-injection measurement for **Jev (TypeSafe AI) applications**.
 
 JevProbe measures whether untrusted external content (web pages, tool
@@ -8,7 +7,6 @@ application's consumers actually depend on — programmatically, under a frozen
 single-pass protocol, with impact assessment hard-gated on observed flips.
 
 ## Framework
-
 ```
 ┌─────────────────────────────────────────────────────────────────┐
 │  Real Jev Application (commit-pinned checkout)                   │
@@ -59,7 +57,6 @@ single-pass protocol, with impact assessment hard-gated on observed flips.
   reviews are part of the denominator.
 
 ## JevProbeBench
-
 This repository includes **JevProbeBench**: a curated injection-test dataset
 built by measuring 228 real open-source Jev applications (2.8k–109.6k stars).
 
@@ -73,7 +70,6 @@ built by measuring 228 real open-source Jev applications (2.8k–109.6k stars).
 See `benchmarks/JevProbeBench/manifest.json` for the full provenance.
 
 ## Layout
-
 | Path | Contents |
 |---|---|
 | `jevprobe/automation/` | durable single-pass infrastructure: budget ledger, recorded transport, manifests, bounded generation |
@@ -85,7 +81,6 @@ See `benchmarks/JevProbeBench/manifest.json` for the full provenance.
 | `docs/PROTOCOL.md` | the frozen single-pass protocol and impact-assessment gates |
 
 ## Quick start
-
 ```bash
 pip install -e .
 # 1. pin the target application (commit, license, star snapshot)
@@ -99,17 +94,14 @@ python -m jevprobe.ecosystem.runner run    experiments/acme_YYYYMMDD
 ```
 
 ## Requirements
-
 Python ≥3.11, `python-dotenv`, `httpx`. For the optional native TypeScript
 seam: Node/Bun with the `typesafe-sdk` package. Judgment and review models are
 called over OpenAI-compatible endpoints (configurable via environment).
 
 ## Release contents
-
 This release includes the JevProbe framework and the curated JevProbeBench
 experimental dataset, including measured outcome labels and aggregate statistics.
-Private raw run logs, budget databases, credentials, and unpublished reports are
-excluded. See `benchmarks/JevProbeBench/README.md` for the dataset fields and
+See `benchmarks/JevProbeBench/README.md` for the dataset fields and
 release redactions. Keep new runtime output in `experiments/` or `work/`.
 
 ## License
